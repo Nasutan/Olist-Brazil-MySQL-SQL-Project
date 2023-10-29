@@ -6,6 +6,13 @@ The document outlines a project focused on data analysis and business insights f
 Dataset link: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 <br>
 Here are some key takeaways and experiences gained from this project:
+<br>
+Table Relation
+<br>
+<img width="474" alt="Screenshot 2023-10-29 at 11 54 51 PM" src="https://github.com/Nasutan/Olist-Brazil-MySQL-SQL-Project/assets/118417997/9e1861a6-7e37-4f69-8245-7c41c2568758">
+<br>
+
+
 
 1. **Data Preprocessing**: The document highlights the importance of data preprocessing, which involves tasks such as handling missing values, cleaning data, and preparing it for analysis. This step ensures that the data is accurate and ready for further investigation.
 

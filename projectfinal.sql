@@ -1,4 +1,3 @@
-Drop database myproject;
 CREATE DATABASE myproject;
 USE myproject;
 
@@ -41,7 +40,7 @@ product_weight_g,product_length_cm,product_height_cm,product_width_cm);
 
 create table Customers (
 	customer_id VARCHAR(50) PRIMARY KEY,
-    customer_unique_id VARCHAR(50),
+        customer_unique_id VARCHAR(50),
 	customer_city VARCHAR(255),
 	customer_state VARCHAR(10)
 );
@@ -59,7 +58,7 @@ create table Orders (
 	order_id VARCHAR(50) PRIMARY KEY,
 	customer_id VARCHAR(50),
 	order_status VARCHAR(100),
-    order_purchase_timestamp datetime,
+   	order_purchase_timestamp datetime,
 	order_approved_at DATETIME,
 	order_delivered_carrier_date DATETIME,
 	order_delivered_customer_date DATETIME,
@@ -102,10 +101,10 @@ IGNORE 1 lines
 
 CREATE TABLE Payments (
 	order_id VARCHAR(50),
-    payment_squential INT,
-    payment_type VARCHAR(50),
-    payment_installments INT,
-    paymnet_value FLOAT,
+    	payment_squential INT,
+    	payment_type VARCHAR(50),
+    	payment_installments INT,
+    	paymnet_value FLOAT,
 	FOREIGN KEY (order_id) REFERENCES Orders (order_id)
 );
 
@@ -121,12 +120,12 @@ IGNORE 1 lines
 
 CREATE TABLE Reviews (
 	review_id VARCHAR(50),
-    order_id VARCHAR(50),
-    review_score INT,
-    review_creation_date DATETIME,
-    review_answer_timestamp DATETIME,
-    PRIMARY KEY (review_id,order_id),
-    FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+    	order_id VARCHAR(50),
+    	review_score INT,
+    	review_creation_date DATETIME,
+    	review_answer_timestamp DATETIME,
+    	PRIMARY KEY (review_id,order_id),
+    	FOREIGN KEY (order_id) REFERENCES Orders(order_id)
 );
 
 LOAD DATA LOCAL INFILE
@@ -255,24 +254,7 @@ group by od.seller_id
 order by total_sale desc
 limit 5;
 
-
--- Number of new customers each year and growth rate
-with customer_year as
-(select customer_unique_id,
-min(year(order_purchase_timestamp)) as first_order_year
-from customers
-join orders on customers.customer_id = orders.customer_id
-group by customer_unique_id)
-
-select first_order_year as year,
-count(customer_unique_id) as new_customers,
-round(case
-when first_order_year = 2016 then 0
-else (count(customer_unique_id)/ (select count(customer_unique_id) from customer_year where first_order_year - 1) )* 100
-end,2) as growth_rate
-from customer_year
-group by first_order_year
-order by first_order_year;
+# MORE QUERIES CAN BE OBTAIN BY CANTQCTING ME ;)
 
 
 

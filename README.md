@@ -2,7 +2,9 @@
 Personal SQL Project using MySQL
 
 The document outlines a project focused on data analysis and business insights for Olist, a Brazilian e-commerce company. The project involved using a dataset that included information on orders, customers, sellers, and products from 2016 to 2018.
+<br>
 Dataset link: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+<br>
 Here are some key takeaways and experiences gained from this project:
 
 1. **Data Preprocessing**: The document highlights the importance of data preprocessing, which involves tasks such as handling missing values, cleaning data, and preparing it for analysis. This step ensures that the data is accurate and ready for further investigation.
